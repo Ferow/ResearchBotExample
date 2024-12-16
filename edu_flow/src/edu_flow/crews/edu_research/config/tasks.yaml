@@ -1,0 +1,22 @@
+research_task:
+  description: >
+    Conduct thorough research about {topic}
+    Make sure you find any interesting and relevant information given the current year is 2024.
+  expected_output: >
+    A thorough research report on {topic} with relevant information that it can inspire educational piece of content aftewards aimed at {audience_level}.
+    The research report should also include any references or sources used to create the content.
+  agent: planner
+
+planning_task:
+  description: >
+    Review the context you received and come up with a plan for an amazing and comprehensive educational content piece that is aimed at {audience_level}.
+    The plan should be highly detailed and comprehensive. 
+  expected_output: >
+    A detailed plan for an educational content piece that is aimed at {audience_level}.The plan should be a series of sections, each section with a subtitle and 
+    a high level goal, sources referenced. The output will be in a pydantic model that is an array of sections.  The sections contain the following information:
+    title: str - This is the title of the section
+    high_level_goal: str - The high level goal of the section
+    why_important: str - They the section is important
+    sources: List[str] - an array of sources used to create the content
+    content_outline: List[str] - The outline of whta is covered with the content
+  agent: developer
